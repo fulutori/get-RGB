@@ -63,27 +63,28 @@ def rgb(f,dir_name):
 		csv_temp = "./temp/"+str(k)
 		csv_data = open(csv_temp)
 		csv_line = csv_data.readline()
-		f.write(csv_line+",")
+		f.write(csv_line[:-1]+",")
+		#f.write(csv_line[:-1]+"\n")
 	f.close()
 	#「temp」ディレクトリを削除
 	shutil.rmtree("temp")
 
 if __name__ == '__main__':
 	#画像のサイズの指定（リサイズ）
-	print("x,yを100~500の範囲で指定してください")
+	print("x,yを10~1000の範囲で指定してください")
 	print("x=",end="")
 	while True:
 		img_w = int(input())
-		if img_w < 100 or img_w > 500:
+		if img_w < 10 or img_w > 1000:
 			continue
-		elif img_w >= 100 and img_w <= 500:
+		elif img_w >= 10 and img_w <= 1000:
 			break
 	print("y=",end="")
 	while True:
 		img_h = int(input())
-		if img_h < 100 or img_h > 500:
+		if img_h < 10 or img_h > 1000:
 			continue
-		elif img_h >= 100 and img_h <= 500:
+		elif img_h >= 10 and img_h <= 1000:
 			break
 	#img_w = 160
 	#img_h = 120
